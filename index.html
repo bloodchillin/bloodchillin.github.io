@@ -12,10 +12,6 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 	
-  <!-- Load jQuery and PapaParse to read data from a CSV file -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
-
 	<style>
 		html, body {
 			height: 100%;
@@ -49,6 +45,16 @@
 
 <script>
 
+// Convert XY correctly
+	const yx = L.latLng;
+
+	function xy(x, y) {
+		if (Array.isArray(x)) { // When doing xy([x, y]);
+			return yx(x[1], x[0]);
+		}
+		return yx(y, x); // When doing xy(x, y);
+	}
+
 // Initialize map and zoom
 	const map = L.map('map', {
 		crs: L.CRS.Simple,
@@ -60,11 +66,14 @@
 	const bounds = [[0,0],[4096,8192]];
 	const image = L.imageOverlay('Worldmap.png', bounds).addTo(map);
 	map.setView([2049,2049], 1);
-	
-// First attempt at markers
 
-	const marker = L.marker([2049,2050]).addTo(map)
-		.bindPopup('<b>Temple of Skua</b>');
+// Define marker locations
+
+
+// Insert markers to map
+
+	const marker = L.marker([2049,2050]).addTo(map).bindPopup('<b>Temple of Skua</b>');
+
 
 	
 </script>
