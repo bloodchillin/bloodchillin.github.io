@@ -43,6 +43,9 @@
 
 <div id='map'></div>
 
+<!-- Call Geojson file that houses all features -->
+<script src="poi.js" type="text/javascript"></script>
+
 <script>
 
 // Convert XY correctly
@@ -67,15 +70,29 @@
 	const image = L.imageOverlay('Worldmap.png', bounds).addTo(map);
 	map.setView([2049,2049], 1);
 
-// Define marker locations
-
-
-// Insert markers to map
-
-	const marker = L.marker([2049,2050]).addTo(map).bindPopup('<b>Temple of Skua</b>');
+// Define custom markers
 
 
 	
+// Define marker locations
+
+	const xppoleLayer = L.geoJSON(xppoles, {
+			pointtoLayer(feature, latlng) {
+				return L.marker(latlng);
+				}}).addTo(map);
+
+// Layer controls
+
+	const basemap = {
+	"The Last Gate":image
+	};
+	const overlays = {
+		'Exp Poles': xppoleLayer
+	};
+
+
+	const layerControl = L.control.layers(basemap,overlays).addTo(map);
+
 </script>
 
 
