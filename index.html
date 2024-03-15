@@ -5,18 +5,22 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>CRS.Simple example - Leaflet</title>
-	
-	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+	<title>The Last Gate - Interactive Map</title>
 
+	<!-- Load Leaflet code library - see updates at http://leafletjs.com/download.html -->	
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+	
+  <!-- Load jQuery and PapaParse to read data from a CSV file -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
 
 	<style>
 		html, body {
 			height: 100%;
 			margin: 0;
 			background-color: black;
+			cursor: url(marker.png);
 		}
 		.leaflet-container {
 			height: 100vw;
@@ -25,6 +29,15 @@
 			max-height: 100%;
 			background-color: black;
 		}
+		.leaflet-grab {
+		cursor: url(marker.png),auto;
+		}
+		
+		.leaflet-dragging .leaflet-grab{
+			cursor: url(marker.png),auto;
+		}
+		
+		
 	</style>
 
 	
@@ -35,16 +48,23 @@
 
 <script>
 
+// Initialize map and zoom
 	const map = L.map('map', {
 		crs: L.CRS.Simple,
 		minZoom: -5
 	});
 
+	
+// display TLG map and set correct bounds
 	const bounds = [[0,0],[4096,8192]];
 	const image = L.imageOverlay('Worldmap.png', bounds).addTo(map);
+	map.setView([2049,2049], 1);
+	
+// First attempt at markers
 
+	const marker = L.marker([2049,2050]).addTo(map)
+		.bindPopup('<b>Temple of Skua</b>');
 
-	map.setView([2050,2050], 1);
 	
 </script>
 
