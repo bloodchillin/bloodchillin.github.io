@@ -102,7 +102,9 @@ var npc = {
 		{"geometry": {"type": "Point","coordinates": [1897.25,1745]},
             "type": "Feature","properties": {"name": "Rocky"}},
 		{"geometry": {"type": "Point","coordinates": [1897.75,1629.75]},
-            "type": "Feature","properties": {"name": "Elric"}}
+            "type": "Feature","properties": {"name": "Elric"}},
+		{"geometry": {"type": "Point","coordinates": [1877.5,1597.5]},
+            "type": "Feature","properties": {"name": "Cherri"}}
     ]
 };
 
