@@ -88,6 +88,22 @@ var Waypoints = {
     ]
 };
 
-
+var npc = {
+    "type": "FeatureCollection",
+    "features": [
+        {"geometry": {"type": "Point","coordinates": [1906.25,2090.25]},
+			"type": "Feature","properties": {"name": "Ronald"}},
+		{"geometry": {"type": "Point","coordinates": [1906.25,2076.25]},
+			"type": "Feature","properties": {"name": "Gani"}},
+		{"geometry": {"type": "Point","coordinates": [1898.25,2025.75]},
+			"type": "Feature","properties": {"name": "Manager"}},
+		{"geometry": {"type": "Point","coordinates": [1897.75,1881.75]},
+			"type": "Feature","properties": {"name": "Donna"}},
+		{"geometry": {"type": "Point","coordinates": [1897.25,1745]},
+            "type": "Feature","properties": {"name": "Rocky"}},
+		{"geometry": {"type": "Point","coordinates": [1897.75,1629.75]},
+            "type": "Feature","properties": {"name": "Elric"}}
+    ]
+};
 
 
