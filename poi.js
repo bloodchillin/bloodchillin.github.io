@@ -22,6 +22,30 @@ var chests = {
     ]
 };
 
+var campus = {
+    "type": "Feature",
+    "properties": {
+        "popupContent": "This is the Auraria West Campus",
+        "style": {
+            weight: 2,
+            color: "#999",
+            opacity: 1,
+            fillColor: "#B0DE5C",
+            fillOpacity: 0.8
+        }
+    },
+    "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+            [
+                [
+                    [100,100],[100,200],[200,200],[200,100]
+                ]
+            ]
+        ]
+    }
+};
+
 var Waypoints = {
     "type": "FeatureCollection",
     "features": [
@@ -60,6 +84,48 @@ var Waypoints = {
             "id": 11},
 		{"geometry": {"type": "Point","coordinates": [2424,1896]},
             "type": "Feature","properties": {"popupContent": "Aston, East"},
+            "id": 12},
+    ]
+};
+
+var npc = {
+    "type": "FeatureCollection",
+    "features": [
+        {"geometry": {"type": "Point","coordinates": [1906.25,2090.25]},
+            "type": "Feature","properties": {"name": "Ronald"},
+            "id": 1},
+		{"geometry": {"type": "Point","coordinates": [1906.25,2076.25]},
+            "type": "Feature","properties": {"name": "Gani"},
+            "id": 2},
+		{"geometry": {"type": "Point","coordinates": [1898.25,2025.75]},
+            "type": "Feature","properties": {"name": "Manager"},
+            "id": 3},
+		{"geometry": {"type": "Point","coordinates": [1897.75,1881.75]},
+            "type": "Feature","properties": {"name": "Donna"},
+            "id": 4},
+		{"geometry": {"type": "Point","coordinates": [1596,1896]},
+            "type": "Feature","properties": {"name": "Aston, West"},
+            "id": 5},
+		{"geometry": {"type": "Point","coordinates": [2424,1896]},
+            "type": "Feature","properties": {"name": "Aston, East"},
+            "id": 6},
+		{"geometry": {"type": "Point","coordinates": [1980,912]},
+            "type": "Feature","properties": {"name": "Forgotten Canyon"},
+            "id": 7},
+		{"geometry": {"type": "Point","coordinates": [2844,2660]},
+            "type": "Feature","properties": {"name": "Lizard Temple, North"},
+            "id": 8},
+		{"geometry": {"type": "Point","coordinates": [2964,1464]},
+            "type": "Feature","properties": {"name": "Temple of Osiris"},
+            "id": 9},
+		{"geometry": {"type": "Point","coordinates": [2048,2048]},
+            "type": "Feature","properties": {"name": "Neiseer, West"},
+            "id": 10},
+		{"geometry": {"type": "Point","coordinates": [1596,1896]},
+            "type": "Feature","properties": {"name": "Aston, West"},
+            "id": 11},
+		{"geometry": {"type": "Point","coordinates": [2424,1896]},
+            "type": "Feature","properties": {"name": "Aston, East"},
             "id": 12},
     ]
 };
